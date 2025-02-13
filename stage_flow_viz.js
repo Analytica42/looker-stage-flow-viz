@@ -119,7 +119,9 @@ looker.plugins.visualizations.add({
         // Calculate reductions
         const reductions = values.slice(0, -1).map((val, idx) => {
             const nextVal = values[idx + 1];
-            return ((val - nextVal) / val * 100).toFixed(1);
+            if (nextVal === 0 && val !== 0) return "100";
+            const reduction = ((val - nextVal) / val) * 100;
+            return reduction >= 99.9 ? "99.9" : reduction.toFixed(1);
         });
 
         // Format large numbers
@@ -194,7 +196,7 @@ looker.plugins.visualizations.add({
             }
 
             const squares = Math.min(value, 3);
-            let html = '<div class="flex gap-0.5">';
+            let html = '<div style="display: flex; gap: 2px;">'; // Added `gap: 2px;` for spacing
 
             for (let i = 0; i < squares; i++) {
                 html += `<div class="square-red" style="width: 16px; height: 16px;"></div>`;
