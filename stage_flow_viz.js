@@ -7,7 +7,7 @@ looker.plugins.visualizations.add({
         }, red_square_color: {
             type: "string", label: "Red Square Color", display: "color", default: "#FF0000", section: "Style"
         }, gray_Square_color: {
-            type: "string", label: "Gray Square Color", display: "color", default: "#E5E7EB", section: "Style
+            type: "string", label: "Gray Square Color", display: "color", default: "#E5E7EB", section: "Style"
         }, arrow_color: {
             type: "string", label: "Arrow Color", display: "color", default: "#CBD5E0", section: "Style"
         }, stage1_label: {
